@@ -1,10 +1,14 @@
+using OOPproject.Model;
 using OOPproject.View.Tabs;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace OOPproject
 {
     public partial class MainForm : Form
     {
+        private Store _store;
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,6 +28,10 @@ namespace OOPproject
             customersTab.Dock = DockStyle.Fill;
             TabController.TabPages[1].Controls.Add(customersTab);
             customersTab.Show();
+
+            _store = new Store();
+            _store.Items = itemsTab.Items;
+            _store.Customers = customersTab.Customers;
         }
     }
 }

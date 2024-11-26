@@ -24,6 +24,11 @@ namespace OOPproject.View.Tabs
             CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
+        public List<Item> Items { 
+            get { return _items; }
+            set { _items = value; }
+        }
+
         private void OnAddButtonClicked(object sender, EventArgs e)
         {
             ClearBackgroundColors();
@@ -38,7 +43,7 @@ namespace OOPproject.View.Tabs
             stackedItem.ItemCategory = (Category)CategoryComboBox.SelectedItem;
 
             // Если данные валидны, добавляем элемент в список
-            this._items.Add(stackedItem);
+            Items.Add(stackedItem);
             ItemsListBox.Items.Add(stackedItem.Name);
 
             // Очищаем текстовые поля
@@ -54,7 +59,7 @@ namespace OOPproject.View.Tabs
             if (ItemsListBox.SelectedIndex >= 0)
             {
                 int selectedIndex = ItemsListBox.SelectedIndex;
-                this._items.RemoveAt(selectedIndex);
+                Items.RemoveAt(selectedIndex);
                 ItemsListBox.Items.RemoveAt(selectedIndex);
 
                 IdTextBox.Clear();
@@ -75,7 +80,7 @@ namespace OOPproject.View.Tabs
             {
                 ClearBackgroundColors();
 
-                var selectedItem = this._items[ItemsListBox.SelectedIndex];
+                var selectedItem = Items[ItemsListBox.SelectedIndex];
 
                 IdTextBox.Text = Convert.ToString(selectedItem.Id);
                 NameTextBox.Text = selectedItem.Name;
@@ -129,7 +134,7 @@ namespace OOPproject.View.Tabs
         {
             if (ItemsListBox.SelectedIndex >= 0)
             {
-                var selectedItem = this._items[ItemsListBox.SelectedIndex];
+                var selectedItem = Items[ItemsListBox.SelectedIndex];
                 selectedItem.ItemCategory = (Category)CategoryComboBox.SelectedItem;
             }
         }

@@ -16,7 +16,6 @@ namespace OOPproject.View.Tabs
     {
         private List<Customer> _customers = new();
         private AddressControl addressControl = new AddressControl();
-        //private int _previousCustomer;
 
         public CustomersTab()
         {
@@ -25,9 +24,13 @@ namespace OOPproject.View.Tabs
             addressControl.TopLevel = false;
             addressControl.FormBorderStyle = FormBorderStyle.None;
             addressControl.Dock = DockStyle.Fill;
-            //TabController.TabPages[1].Controls.Add(customersTab);
             AddressFaceContainer.Controls.Add(addressControl);
             addressControl.Show();
+        }
+
+        public List<Customer> Customers { 
+            get { return _customers; }
+            set { _customers = value; }
         }
 
         private void OnAddButtonPressed(object sender, EventArgs e)
@@ -44,7 +47,7 @@ namespace OOPproject.View.Tabs
             stackedCustomer.Address = addressControl.GetAddress;
 
             // Если данные валидны, добавляем элемент в список
-            this._customers.Add(stackedCustomer);
+            Customers.Add(stackedCustomer);
             CustomersListBox.Items.Add(stackedCustomer.Fullname);
 
             // Очищаем текстовые поля
@@ -59,7 +62,7 @@ namespace OOPproject.View.Tabs
             if (CustomersListBox.SelectedIndex >= 0)
             {
                 int selectedIndex = CustomersListBox.SelectedIndex;
-                this._customers.RemoveAt(selectedIndex);
+                Customers.RemoveAt(selectedIndex);
                 CustomersListBox.Items.RemoveAt(selectedIndex);
 
 
@@ -80,12 +83,11 @@ namespace OOPproject.View.Tabs
             {
                 ClearBackgroundColors();
 
-                var selectedCustomer = this._customers[CustomersListBox.SelectedIndex];
+                var selectedCustomer = Customers[CustomersListBox.SelectedIndex];
 
                 IdTextBox.Text = selectedCustomer.Id.ToString();
                 FullnameTextBox.Text = selectedCustomer.Fullname;
                 addressControl.SetAddress = selectedCustomer.Address;
-                //_previousCustomer = CustomersListBox.SelectedIndex;
             }
         }
 
@@ -124,8 +126,11 @@ namespace OOPproject.View.Tabs
 
         private void AddressControlLeaved(object sender, EventArgs e)
         {
-            var selectedCustomer = this._customers[CustomersListBox.SelectedIndex];
-            selectedCustomer.Address = addressControl.GetAddress;
+            if (CustomersListBox.SelectedIndex >= 0)
+            {
+                var selectedCustomer = Customers[CustomersListBox.SelectedIndex];
+                selectedCustomer.Address = addressControl.GetAddress;
+            }
         }
     }
 }
