@@ -45,6 +45,6 @@ namespace OOPproject.Model
             set { if (value >= 0 && value <= 100000) { this._cost = value; } }
         }
 
-        public Category.StoreCategory ItemCategory { get; set; }
+        public Category ItemCategory { get; set; }
     }
 }

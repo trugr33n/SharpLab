@@ -74,7 +74,7 @@
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(61, 44);
+            label1.Size = new Size(69, 48);
             label1.TabIndex = 0;
             label1.Text = "ID:";
             // 
@@ -83,9 +83,9 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(3, 44);
+            label2.Location = new Point(3, 48);
             label2.Name = "label2";
-            label2.Size = new Size(61, 41);
+            label2.Size = new Size(69, 46);
             label2.TabIndex = 1;
             label2.Text = "Cost:";
             // 
@@ -151,10 +151,9 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 99.99999F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 105F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 68F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.Controls.Add(AddButton, 0, 0);
             tableLayoutPanel1.Controls.Add(RemoveButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -171,7 +170,7 @@
             AddButton.Dock = DockStyle.Fill;
             AddButton.Location = new Point(3, 3);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(101, 31);
+            AddButton.Size = new Size(87, 31);
             AddButton.TabIndex = 0;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
@@ -180,9 +179,9 @@
             // RemoveButton
             // 
             RemoveButton.Dock = DockStyle.Fill;
-            RemoveButton.Location = new Point(110, 3);
+            RemoveButton.Location = new Point(96, 3);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.Size = new Size(99, 31);
+            RemoveButton.Size = new Size(87, 31);
             RemoveButton.TabIndex = 1;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = true;
@@ -203,26 +202,25 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 0, 0);
             tableLayoutPanel2.Controls.Add(groupBox3, 0, 1);
             tableLayoutPanel2.Controls.Add(groupBox4, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 21);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 4;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 54.5454559F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 45.4545441F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 139F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 44F));
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.Size = new Size(510, 426);
             tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.2936506F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 86.70635F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85F));
             tableLayoutPanel3.Controls.Add(label1, 0, 0);
             tableLayoutPanel3.Controls.Add(label2, 0, 1);
             tableLayoutPanel3.Controls.Add(IdTextBox, 1, 0);
@@ -236,24 +234,24 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 51.25F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 48.75F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
-            tableLayoutPanel3.Size = new Size(504, 126);
+            tableLayoutPanel3.Size = new Size(504, 135);
             tableLayoutPanel3.TabIndex = 0;
             // 
             // IdTextBox
             // 
             IdTextBox.Dock = DockStyle.Fill;
-            IdTextBox.Location = new Point(70, 3);
+            IdTextBox.Location = new Point(78, 3);
             IdTextBox.Name = "IdTextBox";
             IdTextBox.ReadOnly = true;
-            IdTextBox.Size = new Size(431, 25);
+            IdTextBox.Size = new Size(423, 25);
             IdTextBox.TabIndex = 2;
             // 
             // CostTextBox
             // 
             CostTextBox.Dock = DockStyle.Fill;
-            CostTextBox.Location = new Point(70, 47);
+            CostTextBox.Location = new Point(78, 51);
             CostTextBox.Name = "CostTextBox";
-            CostTextBox.Size = new Size(431, 25);
+            CostTextBox.Size = new Size(423, 25);
             CostTextBox.TabIndex = 3;
             // 
             // label3
@@ -261,9 +259,9 @@
             label3.AutoSize = true;
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label3.Location = new Point(3, 85);
+            label3.Location = new Point(3, 94);
             label3.Name = "label3";
-            label3.Size = new Size(61, 41);
+            label3.Size = new Size(69, 41);
             label3.TabIndex = 4;
             label3.Text = "Category";
             // 
@@ -271,9 +269,9 @@
             // 
             CategoryComboBox.Dock = DockStyle.Fill;
             CategoryComboBox.FormattingEnabled = true;
-            CategoryComboBox.Location = new Point(70, 88);
+            CategoryComboBox.Location = new Point(78, 97);
             CategoryComboBox.Name = "CategoryComboBox";
-            CategoryComboBox.Size = new Size(431, 25);
+            CategoryComboBox.Size = new Size(423, 25);
             CategoryComboBox.TabIndex = 5;
             CategoryComboBox.SelectedIndexChanged += CategoryComboBoxIndexChanged;
             // 
@@ -282,9 +280,9 @@
             groupBox3.Controls.Add(NameTextBox);
             groupBox3.Dock = DockStyle.Fill;
             groupBox3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            groupBox3.Location = new Point(3, 135);
+            groupBox3.Location = new Point(3, 144);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(504, 104);
+            groupBox3.Size = new Size(504, 136);
             groupBox3.TabIndex = 1;
             groupBox3.TabStop = false;
             groupBox3.Text = "Name";
@@ -294,7 +292,7 @@
             NameTextBox.Dock = DockStyle.Fill;
             NameTextBox.Location = new Point(3, 19);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(498, 82);
+            NameTextBox.Size = new Size(498, 114);
             NameTextBox.TabIndex = 0;
             NameTextBox.Text = "";
             // 
@@ -303,9 +301,9 @@
             groupBox4.Controls.Add(DescripTextBox);
             groupBox4.Dock = DockStyle.Fill;
             groupBox4.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            groupBox4.Location = new Point(3, 245);
+            groupBox4.Location = new Point(3, 286);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(504, 133);
+            groupBox4.Size = new Size(504, 137);
             groupBox4.TabIndex = 2;
             groupBox4.TabStop = false;
             groupBox4.Text = "Description";
@@ -315,7 +313,7 @@
             DescripTextBox.Dock = DockStyle.Fill;
             DescripTextBox.Location = new Point(3, 19);
             DescripTextBox.Name = "DescripTextBox";
-            DescripTextBox.Size = new Size(498, 111);
+            DescripTextBox.Size = new Size(498, 115);
             DescripTextBox.TabIndex = 0;
             DescripTextBox.Text = "";
             // 

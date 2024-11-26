@@ -1,4 +1,5 @@
 ﻿using OOPproject.Model;
+using OOPproject.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +14,34 @@ namespace OOPproject.View.Tabs
 {
     public partial class CustomersTab : Form
     {
-        List<Customer> _customers = new();
+        private List<Customer> _customers = new();
+        private AddressControl addressControl = new AddressControl();
+        //private int _previousCustomer;
 
         public CustomersTab()
         {
             InitializeComponent();
+
+            addressControl.TopLevel = false;
+            addressControl.FormBorderStyle = FormBorderStyle.None;
+            addressControl.Dock = DockStyle.Fill;
+            //TabController.TabPages[1].Controls.Add(customersTab);
+            AddressFaceContainer.Controls.Add(addressControl);
+            addressControl.Show();
         }
 
         private void OnAddButtonPressed(object sender, EventArgs e)
         {
             ClearBackgroundColors();
 
-            if (!IsValidItem())
+            if (!IsValidItem() && !addressControl.IsValidItem())
             {
                 return; // Выходим, если данные не валидны
             }
 
             Customer stackedCustomer = new Customer(FullnameTextBox.Text);
+
+            stackedCustomer.Address = addressControl.GetAddress;
 
             // Если данные валидны, добавляем элемент в список
             this._customers.Add(stackedCustomer);
@@ -50,8 +62,10 @@ namespace OOPproject.View.Tabs
                 this._customers.RemoveAt(selectedIndex);
                 CustomersListBox.Items.RemoveAt(selectedIndex);
 
+
                 IdTextBox.Clear();
                 FullnameTextBox.Clear();
+                addressControl.ClearBoxes();
             }
             else
             {
@@ -68,8 +82,10 @@ namespace OOPproject.View.Tabs
 
                 var selectedCustomer = this._customers[CustomersListBox.SelectedIndex];
 
-                IdTextBox.Text = selectedCustomer.ToString();
+                IdTextBox.Text = selectedCustomer.Id.ToString();
                 FullnameTextBox.Text = selectedCustomer.Fullname;
+                addressControl.SetAddress = selectedCustomer.Address;
+                //_previousCustomer = CustomersListBox.SelectedIndex;
             }
         }
 
@@ -89,11 +105,27 @@ namespace OOPproject.View.Tabs
         private void ClearBackgroundColors()
         {
             FullnameTextBox.BackColor = SystemColors.Window;
+            addressControl.DecolorizeBoxes();
         }
 
         private void ClearTextBoxes()
         {
             FullnameTextBox.Clear();
+            addressControl.ClearBoxes();
+        }
+
+        private void MouseDownInCustomerListBox(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                CustomersListBox.ClearSelected();
+            }
+        }
+
+        private void AddressControlLeaved(object sender, EventArgs e)
+        {
+            var selectedCustomer = this._customers[CustomersListBox.SelectedIndex];
+            selectedCustomer.Address = addressControl.GetAddress;
         }
     }
 }

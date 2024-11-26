@@ -25,6 +25,15 @@ namespace OOPproject.Model
             Apartment = apartment;
         }
 
+        public Address() { 
+            Index = 0;
+            Country = "Empty";
+            City = "Empty";
+            Street = "Empty";
+            Building = "Empty";
+            Apartment = "Empty";
+        }
+
         public int Index { 
             set { if (value > 0 && value <= 999_999) { this._index = value; } }
             get { return this._index; }

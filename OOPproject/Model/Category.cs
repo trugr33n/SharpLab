@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OOPproject.Model
 {
-    public class Category
-    {
-        public enum StoreCategory {
+
+        public enum Category {
             VegetablesAndFruits,
             Drinks,
             DailyProducts,
@@ -17,5 +16,4 @@ namespace OOPproject.Model
             Sweets,
             MeatAndFish
         }
-    }
 }

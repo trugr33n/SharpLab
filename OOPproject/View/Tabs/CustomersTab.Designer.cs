@@ -43,12 +43,7 @@
             FullnameTextBox = new TextBox();
             IdTextBox = new TextBox();
             splitContainer4 = new SplitContainer();
-            groupBox3 = new GroupBox();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            tableLayoutPanel5 = new TableLayoutPanel();
+            AddressFaceContainer = new Panel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -68,9 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
             splitContainer4.SuspendLayout();
-            groupBox3.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -130,20 +122,21 @@
             CustomersListBox.Size = new Size(303, 378);
             CustomersListBox.TabIndex = 0;
             CustomersListBox.SelectedIndexChanged += IndexInBoxChanged;
+            CustomersListBox.MouseDown += MouseDownInCustomerListBox;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 119F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.Controls.Add(AddButton, 0, 0);
             tableLayoutPanel1.Controls.Add(RemoveButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 9F));
             tableLayoutPanel1.Size = new Size(309, 44);
             tableLayoutPanel1.TabIndex = 0;
@@ -153,7 +146,7 @@
             AddButton.Dock = DockStyle.Fill;
             AddButton.Location = new Point(3, 3);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(89, 29);
+            AddButton.Size = new Size(97, 29);
             AddButton.TabIndex = 0;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
@@ -162,9 +155,9 @@
             // RemoveButton
             // 
             RemoveButton.Dock = DockStyle.Fill;
-            RemoveButton.Location = new Point(98, 3);
+            RemoveButton.Location = new Point(106, 3);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.Size = new Size(89, 29);
+            RemoveButton.Size = new Size(97, 29);
             RemoveButton.TabIndex = 1;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = true;
@@ -266,88 +259,19 @@
             // 
             // splitContainer4.Panel1
             // 
-            splitContainer4.Panel1.Controls.Add(groupBox3);
+            splitContainer4.Panel1.Controls.Add(AddressFaceContainer);
             splitContainer4.Size = new Size(487, 353);
             splitContainer4.SplitterDistance = 171;
             splitContainer4.TabIndex = 0;
             // 
-            // groupBox3
+            // AddressFaceContainer
             // 
-            groupBox3.Controls.Add(tableLayoutPanel3);
-            groupBox3.Dock = DockStyle.Fill;
-            groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBox3.Location = new Point(0, 0);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(487, 171);
-            groupBox3.TabIndex = 0;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Delivery Address";
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 0, 0);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel5, 0, 1);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(3, 21);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 4;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 51.47059F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 48.52941F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableLayoutPanel3.Size = new Size(481, 147);
-            tableLayoutPanel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 2;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.5789471F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 84.42105F));
-            tableLayoutPanel4.Controls.Add(label2, 0, 0);
-            tableLayoutPanel4.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 1;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(475, 31);
-            tableLayoutPanel4.TabIndex = 0;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label2.Location = new Point(3, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(68, 31);
-            label2.TabIndex = 0;
-            label2.Text = "Post Index:";
-            // 
-            // textBox1
-            // 
-            textBox1.Dock = DockStyle.Left;
-            textBox1.Location = new Point(77, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(190, 25);
-            textBox1.TabIndex = 1;
-            // 
-            // tableLayoutPanel5
-            // 
-            tableLayoutPanel5.ColumnCount = 4;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.6122456F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.38776F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 162F));
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 40);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 1;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new Size(475, 29);
-            tableLayoutPanel5.TabIndex = 1;
+            AddressFaceContainer.Dock = DockStyle.Fill;
+            AddressFaceContainer.Location = new Point(0, 0);
+            AddressFaceContainer.Name = "AddressFaceContainer";
+            AddressFaceContainer.Size = new Size(487, 171);
+            AddressFaceContainer.TabIndex = 0;
+            AddressFaceContainer.Leave += AddressControlLeaved;
             // 
             // CustomersTab
             // 
@@ -377,10 +301,6 @@
             splitContainer4.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -401,11 +321,6 @@
         private TextBox FullnameTextBox;
         private TextBox IdTextBox;
         private SplitContainer splitContainer4;
-        private GroupBox groupBox3;
-        private TableLayoutPanel tableLayoutPanel3;
-        private TableLayoutPanel tableLayoutPanel4;
-        private Label label2;
-        private TextBox textBox1;
-        private TableLayoutPanel tableLayoutPanel5;
+        private Panel AddressFaceContainer;
     }
 }

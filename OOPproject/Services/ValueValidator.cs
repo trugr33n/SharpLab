@@ -12,7 +12,8 @@ namespace OOPproject.Services
 
             if (value.Length > maxLength)
             {
-                throw new ArgumentException($"{propertyName} должен быть меньше {maxLength} символов.");
+                MessageBox.Show($"В {propertyName} должно быть меньше {maxLength} символов.");
+                throw new ArgumentException($"В {propertyName} должно быть меньше {maxLength} символов.");
             }
         }
     }

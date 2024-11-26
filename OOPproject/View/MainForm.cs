@@ -9,6 +9,7 @@ namespace OOPproject
         {
             InitializeComponent();
             this.Text = "Бизнес приложение \"Барабудайка\"";
+            this.Size = new Size(1280, 720);
 
             ItemsTab itemsTab = new ItemsTab();
             itemsTab.TopLevel = false;

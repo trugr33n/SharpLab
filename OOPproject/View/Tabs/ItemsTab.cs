@@ -1,4 +1,5 @@
 ﻿using OOPproject.Model;
+using OOPproject.View.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace OOPproject.View.Tabs
         {
             InitializeComponent();
 
-            CategoryComboBox.DataSource = Enum.GetValues(typeof(Category.StoreCategory));
+            CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
         private void OnAddButtonClicked(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace OOPproject.View.Tabs
 
             Item stackedItem = new Item(NameTextBox.Text, DescripTextBox.Text, Convert.ToDecimal(CostTextBox.Text));
 
-            stackedItem.ItemCategory = (Category.StoreCategory)CategoryComboBox.SelectedItem;
+            stackedItem.ItemCategory = (Category)CategoryComboBox.SelectedItem;
 
             // Если данные валидны, добавляем элемент в список
             this._items.Add(stackedItem);
@@ -129,7 +130,7 @@ namespace OOPproject.View.Tabs
             if (ItemsListBox.SelectedIndex >= 0)
             {
                 var selectedItem = this._items[ItemsListBox.SelectedIndex];
-                selectedItem.ItemCategory = (Category.StoreCategory)CategoryComboBox.SelectedItem;
+                selectedItem.ItemCategory = (Category)CategoryComboBox.SelectedItem;
             }
         }
 
