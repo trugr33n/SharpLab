@@ -1,4 +1,5 @@
 ﻿using OOPproject.Model;
+using OOPproject.Model.Enums;
 using OOPproject.View.Controls;
 using System;
 using System.Collections.Generic;
