@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,7 @@ namespace OOPproject.View.Tabs
                 return; // Выходим, если данные не валидны
             }
 
-            Item stackedItem = new Item(NameTextBox.Text, DescripTextBox.Text, Convert.ToDecimal(CostTextBox.Text));
+            Item stackedItem = new Item(NameTextBox.Text, DescripTextBox.Text, ContentInCostBox());
 
             stackedItem.ItemCategory = (Category)CategoryComboBox.SelectedItem;
 
@@ -128,6 +129,17 @@ namespace OOPproject.View.Tabs
             DescripTextBox.Clear();
             CostTextBox.Clear();
             CategoryComboBox.SelectedIndex = -1;
+        }
+
+        private decimal ContentInCostBox() {
+            decimal content;
+            if (decimal.TryParse(CostTextBox.Text, out content)) {
+                return content;
+            }
+            else {
+                MessageBox.Show("Ошибка, введенная цена содержит сторонние символы");
+                return 0;
+            }
         }
 
         private void CategoryComboBoxIndexChanged(object sender, EventArgs e)

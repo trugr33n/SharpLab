@@ -31,7 +31,7 @@ namespace OOPproject
 
             _store = new Store();
             _store.Items = itemsTab.Items;
-            _store.Customers = customersTab.Customers;
+            _store.Customers = customersTab.Customers;                  
         }
     }
 }
