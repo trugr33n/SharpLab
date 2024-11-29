@@ -31,6 +31,7 @@
             TabController = new TabControl();
             ItemPage = new TabPage();
             CustomerPage = new TabPage();
+            CartPage = new TabPage();
             TabController.SuspendLayout();
             SuspendLayout();
             // 
@@ -38,6 +39,7 @@
             // 
             TabController.Controls.Add(ItemPage);
             TabController.Controls.Add(CustomerPage);
+            TabController.Controls.Add(CartPage);
             TabController.Dock = DockStyle.Fill;
             TabController.Location = new Point(0, 0);
             TabController.Name = "TabController";
@@ -64,6 +66,16 @@
             CustomerPage.Text = "Customers";
             CustomerPage.UseVisualStyleBackColor = true;
             // 
+            // CartPage
+            // 
+            CartPage.Location = new Point(4, 24);
+            CartPage.Name = "CartPage";
+            CartPage.Padding = new Padding(3);
+            CartPage.Size = new Size(792, 422);
+            CartPage.TabIndex = 2;
+            CartPage.Text = "Cart";
+            CartPage.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -81,5 +93,6 @@
         private TabControl TabController;
         private TabPage ItemPage;
         private TabPage CustomerPage;
+        private TabPage CartPage;
     }
 }

@@ -29,6 +29,13 @@ namespace OOPproject
             TabController.TabPages[1].Controls.Add(customersTab);
             customersTab.Show();
 
+            CartsTab cartsTab = new CartsTab();
+            cartsTab.TopLevel = false;
+            cartsTab.FormBorderStyle = FormBorderStyle.None;
+            cartsTab.Dock = DockStyle.Fill;
+            TabController.TabPages[2].Controls.Add(cartsTab);
+            cartsTab.Show();
+
             _store = new Store();
             _store.Items = itemsTab.Items;
             _store.Customers = customersTab.Customers;                  
