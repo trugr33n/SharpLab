@@ -12,12 +12,16 @@ namespace OOPproject.Model
         private readonly int _id;
         private string _fullname;
         private Address _address;
+        private Cart _cart;
+        private List<Order> _order;
 
         private static int _nextId = 0;
 
         public Customer(string fullname) {
             this._id = _nextId;
             Fullname = fullname;
+            Cart = new(); 
+            Order = new();
 
             _nextId++;
         }
@@ -29,7 +33,15 @@ namespace OOPproject.Model
         }
         public Address Address {
             get { return this._address;}
-            set { this._address = value;} 
+            set { this._address = value; } 
+        }
+        public Cart Cart {
+            get { return this._cart; }
+            set { this._cart = value; }
+        }
+        public List<Order> Order {
+            get { return this._order; }
+            set { this._order = value; }
         }
     }
 }

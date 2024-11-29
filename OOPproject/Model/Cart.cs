@@ -22,7 +22,7 @@ namespace OOPproject.Model
 
                 decimal _amount = 0;
                 foreach (Item e in _items) { 
-                    _amount = e.Cost;
+                    _amount += e.Cost;
                 } 
                 return _amount;
             }
