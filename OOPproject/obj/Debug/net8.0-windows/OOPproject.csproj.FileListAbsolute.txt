@@ -19,3 +19,4 @@ C:\Users\Кирилл\source\repos\OOPproject\OOPproject\obj\Debug\net8.0-window
 C:\Users\Кирилл\source\repos\OOPproject\OOPproject\obj\Debug\net8.0-windows\OOPproject.sourcelink.json
 C:\Users\Кирилл\source\repos\OOPproject\OOPproject\obj\Debug\net8.0-windows\OOPproject.View.Controls.AddressControl.resources
 C:\Users\Кирилл\source\repos\OOPproject\OOPproject\obj\Debug\net8.0-windows\OOPproject.View.Tabs.CartsTab.resources
+C:\Users\Кирилл\source\repos\OOPproject\OOPproject\obj\Debug\net8.0-windows\OOPproject.View.Tabs.OrdersTab.resources

@@ -31,7 +31,7 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             groupBox1 = new GroupBox();
-            CartItemsListBox = new ListBox();
+            ItemsListBox = new ListBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             AddToCartButton = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -99,7 +99,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(CartItemsListBox);
+            groupBox1.Controls.Add(ItemsListBox);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
             groupBox1.Location = new Point(0, 0);
@@ -109,15 +109,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Items";
             // 
-            // CartItemsListBox
+            // ItemsListBox
             // 
-            CartItemsListBox.Dock = DockStyle.Fill;
-            CartItemsListBox.FormattingEnabled = true;
-            CartItemsListBox.ItemHeight = 17;
-            CartItemsListBox.Location = new Point(3, 21);
-            CartItemsListBox.Name = "CartItemsListBox";
-            CartItemsListBox.Size = new Size(264, 370);
-            CartItemsListBox.TabIndex = 0;
+            ItemsListBox.Dock = DockStyle.Fill;
+            ItemsListBox.FormattingEnabled = true;
+            ItemsListBox.ItemHeight = 17;
+            ItemsListBox.Location = new Point(3, 21);
+            ItemsListBox.Name = "ItemsListBox";
+            ItemsListBox.Size = new Size(264, 370);
+            ItemsListBox.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
@@ -142,6 +142,7 @@
             AddToCartButton.TabIndex = 0;
             AddToCartButton.Text = "Add To Cart";
             AddToCartButton.UseVisualStyleBackColor = true;
+            AddToCartButton.Click += AddToCartButtonPressed;
             // 
             // tableLayoutPanel2
             // 
@@ -199,6 +200,7 @@
             CustomerComboBox.Name = "CustomerComboBox";
             CustomerComboBox.Size = new Size(427, 23);
             CustomerComboBox.TabIndex = 1;
+            CustomerComboBox.SelectedIndexChanged += CustomerComboBoxIndexChanged;
             // 
             // groupBox2
             // 
@@ -271,6 +273,7 @@
             CreateOrderButton.TabIndex = 0;
             CreateOrderButton.Text = "Create Order";
             CreateOrderButton.UseVisualStyleBackColor = true;
+            CreateOrderButton.Click += CreateOrderButtonPressed;
             // 
             // RemoveItemButton
             // 
@@ -281,6 +284,7 @@
             RemoveItemButton.TabIndex = 1;
             RemoveItemButton.Text = "Remove Item";
             RemoveItemButton.UseVisualStyleBackColor = true;
+            RemoveItemButton.Click += RemoveItemButtonPressed;
             // 
             // ClearCartButton
             // 
@@ -291,6 +295,7 @@
             ClearCartButton.TabIndex = 2;
             ClearCartButton.Text = "Clear Cart";
             ClearCartButton.UseVisualStyleBackColor = true;
+            ClearCartButton.Click += ClearCartButtonPressed;
             // 
             // CartsTab
             // 
@@ -324,7 +329,7 @@
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private GroupBox groupBox1;
-        private ListBox CartItemsListBox;
+        private ListBox ItemsListBox;
         private TableLayoutPanel tableLayoutPanel1;
         private Button AddToCartButton;
         private TableLayoutPanel tableLayoutPanel2;

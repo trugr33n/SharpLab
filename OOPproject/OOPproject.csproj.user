@@ -16,5 +16,8 @@
     <Compile Update="View\Tabs\ItemsTab.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Tabs\OrdersTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
