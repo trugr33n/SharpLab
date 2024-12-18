@@ -31,6 +31,12 @@
             splitContainer1 = new SplitContainer();
             groupBox1 = new GroupBox();
             CustomersOrderList = new DataGridView();
+            IdInfo = new DataGridViewTextBoxColumn();
+            CreatedInfo = new DataGridViewTextBoxColumn();
+            OrderStatusInfo = new DataGridViewTextBoxColumn();
+            CustomerFullnameInfo = new DataGridViewTextBoxColumn();
+            CustomerAddressInfo = new DataGridViewTextBoxColumn();
+            AmountInfo = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             AddressPanel = new Panel();
             groupBox2 = new GroupBox();
@@ -46,12 +52,6 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             label4 = new Label();
             PriceLabel = new Label();
-            IdInfo = new DataGridViewTextBoxColumn();
-            CreatedInfo = new DataGridViewTextBoxColumn();
-            OrderStatusInfo = new DataGridViewTextBoxColumn();
-            CustomerFullnameInfo = new DataGridViewTextBoxColumn();
-            CustomerAddressInfo = new DataGridViewTextBoxColumn();
-            AmountInfo = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -105,6 +105,36 @@
             CustomersOrderList.Size = new Size(286, 426);
             CustomersOrderList.TabIndex = 0;
             CustomersOrderList.CellContentClick += OnCustomersOrderListDoubleClicked;
+            // 
+            // IdInfo
+            // 
+            IdInfo.HeaderText = "Id";
+            IdInfo.Name = "IdInfo";
+            // 
+            // CreatedInfo
+            // 
+            CreatedInfo.HeaderText = "Created";
+            CreatedInfo.Name = "CreatedInfo";
+            // 
+            // OrderStatusInfo
+            // 
+            OrderStatusInfo.HeaderText = "Order Status";
+            OrderStatusInfo.Name = "OrderStatusInfo";
+            // 
+            // CustomerFullnameInfo
+            // 
+            CustomerFullnameInfo.HeaderText = "Customer Full Name";
+            CustomerFullnameInfo.Name = "CustomerFullnameInfo";
+            // 
+            // CustomerAddressInfo
+            // 
+            CustomerAddressInfo.HeaderText = "Customer Address";
+            CustomerAddressInfo.Name = "CustomerAddressInfo";
+            // 
+            // AmountInfo
+            // 
+            AmountInfo.HeaderText = "Amount";
+            AmountInfo.Name = "AmountInfo";
             // 
             // tableLayoutPanel1
             // 
@@ -283,36 +313,6 @@
             PriceLabel.Size = new Size(150, 81);
             PriceLabel.TabIndex = 1;
             PriceLabel.Text = "PriceLabel";
-            // 
-            // IdInfo
-            // 
-            IdInfo.HeaderText = "Id";
-            IdInfo.Name = "IdInfo";
-            // 
-            // CreatedInfo
-            // 
-            CreatedInfo.HeaderText = "Created";
-            CreatedInfo.Name = "CreatedInfo";
-            // 
-            // OrderStatusInfo
-            // 
-            OrderStatusInfo.HeaderText = "Order Status";
-            OrderStatusInfo.Name = "OrderStatusInfo";
-            // 
-            // CustomerFullnameInfo
-            // 
-            CustomerFullnameInfo.HeaderText = "Customer Full Name";
-            CustomerFullnameInfo.Name = "CustomerFullnameInfo";
-            // 
-            // CustomerAddressInfo
-            // 
-            CustomerAddressInfo.HeaderText = "Customer Address";
-            CustomerAddressInfo.Name = "CustomerAddressInfo";
-            // 
-            // AmountInfo
-            // 
-            AmountInfo.HeaderText = "Amount";
-            AmountInfo.Name = "AmountInfo";
             // 
             // OrdersTab
             // 

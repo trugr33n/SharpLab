@@ -33,6 +33,7 @@
             CustomerPage = new TabPage();
             CartPage = new TabPage();
             OrdersPage = new TabPage();
+            PriorityOrderPage = new TabPage();
             TabController.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             TabController.Controls.Add(CustomerPage);
             TabController.Controls.Add(CartPage);
             TabController.Controls.Add(OrdersPage);
+            TabController.Controls.Add(PriorityOrderPage);
             TabController.Dock = DockStyle.Fill;
             TabController.Location = new Point(0, 0);
             TabController.Name = "TabController";
@@ -88,6 +90,16 @@
             OrdersPage.Text = "Orders";
             OrdersPage.UseVisualStyleBackColor = true;
             // 
+            // PriorityOrderPage
+            // 
+            PriorityOrderPage.Location = new Point(4, 24);
+            PriorityOrderPage.Name = "PriorityOrderPage";
+            PriorityOrderPage.Padding = new Padding(3);
+            PriorityOrderPage.Size = new Size(792, 422);
+            PriorityOrderPage.TabIndex = 4;
+            PriorityOrderPage.Text = "Prority Order";
+            PriorityOrderPage.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,5 +119,6 @@
         private TabPage CustomerPage;
         private TabPage CartPage;
         private TabPage OrdersPage;
+        private TabPage PriorityOrderPage;
     }
 }

@@ -12,6 +12,7 @@ namespace OOPproject
         private CustomersTab customersTab = new CustomersTab();
         private CartsTab cartsTab = new CartsTab();
         private OrdersTab ordersTab = new OrdersTab();
+        private PriorityOrdersTab priorityOrdersTab = new PriorityOrdersTab();
 
         public MainForm()
         {
@@ -42,6 +43,12 @@ namespace OOPproject
             ordersTab.Dock = DockStyle.Fill;
             TabController.TabPages[3].Controls.Add(ordersTab);
             ordersTab.Show();
+
+            priorityOrdersTab.TopLevel = false;
+            priorityOrdersTab.FormBorderStyle = FormBorderStyle.None;
+            priorityOrdersTab.Dock = DockStyle.Fill;
+            TabController.TabPages[4].Controls.Add(priorityOrdersTab);
+            priorityOrdersTab.Show();
 
             _store = new Store();
             _store.Items = itemsTab.Items;

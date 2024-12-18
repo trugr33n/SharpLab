@@ -52,7 +52,7 @@ namespace OOPproject.View.Tabs
                     interimRow.Cells[1].Value = _orders[i].DeliveryDate;
                     interimRow.Cells[2].Value = _orders[i].Status;
                     interimRow.Cells[3].Value = _orders[i].FullName;
-                    interimRow.Cells[4].Value = _orders[i].DeliveryAddress.City + "," + _orders[i].DeliveryAddress.Street + "," + _orders[i].DeliveryAddress.Building;
+                    interimRow.Cells[4].Value = _orders[i].DeliveryAddress.City + ", " + _orders[i].DeliveryAddress.Street + ", " + _orders[i].DeliveryAddress.Building;
                     interimRow.Cells[5].Value = _orders[i].Cart.Amount;
 
                     CustomersOrderList.Rows.Add(interimRow);
