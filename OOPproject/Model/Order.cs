@@ -29,6 +29,16 @@ namespace OOPproject.Model
             _nextId++;
         }
 
+        /*public Order() { 
+            this._id = _nextId;
+            this._deliveryDate = DateTime.Now;
+            Cart = new Cart();
+            DeliveryAddress = new Address();
+            this._fullname = "Null Name Subject";
+
+            _nextId++;
+        }*/
+
         public int Id { get { return this._id; } }
         public DateTime DeliveryDate { get { return this._deliveryDate; } }
         public Cart Cart { get { return this._cart; } set { this._cart = value; this._totalPrice = value.Amount; } }
