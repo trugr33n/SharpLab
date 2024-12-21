@@ -14,6 +14,7 @@ namespace OOPproject.Model
         private string _name;
         private string _info;
         private decimal _cost;
+        private Category _category;
 
         private static int _nextId = 0;
 
@@ -23,6 +24,16 @@ namespace OOPproject.Model
             Name = name;
             Info = info;
             Cost = cost;
+
+            _nextId++;
+        }
+
+        public Item(string name, string info, decimal cost, Category category) {
+            this._id = _nextId;
+            Name = name;
+            Info = info;
+            Cost = cost;
+            ItemCategory = category;
 
             _nextId++;
         }
@@ -46,6 +57,6 @@ namespace OOPproject.Model
             set { if (value >= 0 && value <= 100000) { this._cost = value; } }
         }
 
-        public Category ItemCategory { get; set; }
+        public Category ItemCategory { get { return this._category; } set { this._category = value; } }
     }
 }

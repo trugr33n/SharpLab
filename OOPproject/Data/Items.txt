@@ -1,0 +1,19 @@
+2599	Wine	Красное и полусладкое. Что может быть лучше?	Drinks
+97	Green Apples	Целый килограмм зеленых и свежих яблок. А еще они кисленькие	VegetablesAndFruits
+237	Red Apples	Килограмм сладеньких яблочек. Некоторые еще называют их кровавыми	VegetablesAndFruits
+250	Bananas	Целый килограмм спелых и ароматных бананов. Из Эквадора, с любовью	VegetablesAndFruits
+75	Chocolate "Babaevsky"	Настоящий, горький и с миндалем. Частый выбор бабушек	Sweets
+570	Cake "Turtle"	Любимый торт разработчика данного приложения	Sweets
+45	Cookies "Jubilee"	А вы пробовали новый рецепт с тирамису?	Sweets
+209	Maasdame Cheese	О да, это любимый сыр разработчика данного приложения	DailyProducts
+69	Milk "Litvinovskoe"	Вот это я понимаю молоко!	DailyProducts
+79	Cotage cheese	Дети одобрят. Особенно с вареньем	DailyProducts
+39	Poppy Rolls	Вкусно, сладко, но мака супер мало	BakeryProducts
+39	Cinnamon Rolls	Эхх, буквально чуть-чуть не хватает до синабона	BakeryProducts
+49	Bun with condensed milk	Слойка, да еще и с варенной сгущенкой. М-м-м как вкусно	BakeryProducts
+21	Smoked paprika	Любите блюда с копченым вкусом и красноватым цветом?	Spices
+15	Bay leaf	Дай-ка угадаю, ты хочешь сварить пельмешек, да?	Spices
+25	Hop-suneli	Подойдет к любому блюду, да еще и спасет его от ужасного вкуса	Spices
+140	Coca-cola	Не показывайте это российским детям	Drinks
+137	Light beer	А вы знали, что толстеют не от пива, а от закусок?	Drinks
+49	Dushes	Так вот он какой, вкус детсва	Drinks

@@ -170,6 +170,7 @@
             IdTextBox.Dock = DockStyle.Fill;
             IdTextBox.Location = new Point(80, 3);
             IdTextBox.Name = "IdTextBox";
+            IdTextBox.ReadOnly = true;
             IdTextBox.Size = new Size(302, 25);
             IdTextBox.TabIndex = 3;
             // 
@@ -178,6 +179,7 @@
             CreatedTextBox.Dock = DockStyle.Fill;
             CreatedTextBox.Location = new Point(80, 28);
             CreatedTextBox.Name = "CreatedTextBox";
+            CreatedTextBox.ReadOnly = true;
             CreatedTextBox.Size = new Size(302, 25);
             CreatedTextBox.TabIndex = 4;
             // 
@@ -189,6 +191,7 @@
             StatusComboBox.Name = "StatusComboBox";
             StatusComboBox.Size = new Size(302, 25);
             StatusComboBox.TabIndex = 5;
+            StatusComboBox.SelectedIndexChanged += StatusSelectedIndexChanged;
             // 
             // groupBox2
             // 
@@ -295,6 +298,7 @@
             AddItemButton.TabIndex = 0;
             AddItemButton.Text = "Add Item";
             AddItemButton.UseVisualStyleBackColor = true;
+            AddItemButton.Click += OnAddItemButtonPressed;
             // 
             // RemoveItemButton
             // 
@@ -305,6 +309,7 @@
             RemoveItemButton.TabIndex = 1;
             RemoveItemButton.Text = "Remove Item";
             RemoveItemButton.UseVisualStyleBackColor = true;
+            RemoveItemButton.Click += OnRemoveItemButtonPressed;
             // 
             // ClearOrderButton
             // 
@@ -315,6 +320,7 @@
             ClearOrderButton.TabIndex = 2;
             ClearOrderButton.Text = "Clear Order";
             ClearOrderButton.UseVisualStyleBackColor = true;
+            ClearOrderButton.Click += OnClearOrderButtonPressed;
             // 
             // tableLayoutPanel6
             // 

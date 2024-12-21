@@ -42,6 +42,7 @@
             label3 = new Label();
             FullnameTextBox = new TextBox();
             IdTextBox = new TextBox();
+            IsPriorityCheckBox = new CheckBox();
             splitContainer4 = new SplitContainer();
             AddressFaceContainer = new Panel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -196,18 +197,20 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.216217F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.21622F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 83.78378F));
             tableLayoutPanel2.Controls.Add(label1, 0, 1);
             tableLayoutPanel2.Controls.Add(label3, 0, 0);
             tableLayoutPanel2.Controls.Add(FullnameTextBox, 1, 1);
             tableLayoutPanel2.Controls.Add(IdTextBox, 1, 0);
+            tableLayoutPanel2.Controls.Add(IsPriorityCheckBox, 1, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(3, 21);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 46.8571434F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 53.1428566F));
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.Size = new Size(481, 69);
             tableLayoutPanel2.TabIndex = 0;
             // 
@@ -216,9 +219,9 @@
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(3, 32);
+            label1.Location = new Point(3, 23);
             label1.Name = "label1";
-            label1.Size = new Size(72, 37);
+            label1.Size = new Size(72, 23);
             label1.TabIndex = 0;
             label1.Text = "Full Name:";
             // 
@@ -229,14 +232,14 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             label3.Location = new Point(3, 0);
             label3.Name = "label3";
-            label3.Size = new Size(72, 32);
+            label3.Size = new Size(72, 23);
             label3.TabIndex = 2;
             label3.Text = "ID:";
             // 
             // FullnameTextBox
             // 
             FullnameTextBox.Dock = DockStyle.Fill;
-            FullnameTextBox.Location = new Point(81, 35);
+            FullnameTextBox.Location = new Point(81, 26);
             FullnameTextBox.Name = "FullnameTextBox";
             FullnameTextBox.Size = new Size(397, 25);
             FullnameTextBox.TabIndex = 4;
@@ -249,6 +252,17 @@
             IdTextBox.ReadOnly = true;
             IdTextBox.Size = new Size(397, 25);
             IdTextBox.TabIndex = 5;
+            // 
+            // IsPriorityCheckBox
+            // 
+            IsPriorityCheckBox.AutoSize = true;
+            IsPriorityCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            IsPriorityCheckBox.Location = new Point(81, 49);
+            IsPriorityCheckBox.Name = "IsPriorityCheckBox";
+            IsPriorityCheckBox.Size = new Size(75, 17);
+            IsPriorityCheckBox.TabIndex = 6;
+            IsPriorityCheckBox.Text = "Is Priority";
+            IsPriorityCheckBox.UseVisualStyleBackColor = true;
             // 
             // splitContainer4
             // 
@@ -322,5 +336,6 @@
         private TextBox IdTextBox;
         private SplitContainer splitContainer4;
         private Panel AddressFaceContainer;
+        private CheckBox IsPriorityCheckBox;
     }
 }

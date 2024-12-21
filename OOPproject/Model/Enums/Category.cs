@@ -15,6 +15,7 @@ namespace OOPproject.Model.Enums
         BakeryProducts,
         Spices,
         Sweets,
-        MeatAndFish
+        MeatAndFish,
+        Empty
     }
 }

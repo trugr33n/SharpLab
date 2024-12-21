@@ -37,7 +37,7 @@ namespace OOPproject.Model
             this._fullname = "Null Name Subject";
 
             _nextId++;
-        }*/
+        } - Пустой конструктор. Нужно будет удалить при следующем коммите */
 
         public int Id { get { return this._id; } }
         public DateTime DeliveryDate { get { return this._deliveryDate; } }
