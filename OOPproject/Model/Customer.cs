@@ -22,6 +22,7 @@ namespace OOPproject.Model
             Fullname = fullname;
             Cart = new(); 
             Order = new();
+            IsPriority = false;
 
             _nextId++;
         }
@@ -43,5 +44,6 @@ namespace OOPproject.Model
             get { return this._order; }
             set { this._order = value; }
         }
+        public bool IsPriority { get; set; }
     }
 }

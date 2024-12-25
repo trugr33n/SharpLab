@@ -19,17 +19,22 @@ namespace OOPproject.View.Tabs
         private List<Customer> _customers = new();
         private List<Order> _orders = new();
 
+        private Order _selectedOrder;
+        private PriorityOrder _selectedPriorityOrder;
+
         public OrdersTab()
         {
             InitializeComponent();
             AddressControlInit();
             ComboBoxInit();
+            DeliveryTimeComboBox.Visible = false;
         }
 
         public List<Customer> Customers { get { return this._customers; } set { this._customers = value; } }
 
         public void DataGridInit()
         {
+            _orders.Clear();
 
             foreach (var thing in Customers)
             {
@@ -75,15 +80,20 @@ namespace OOPproject.View.Tabs
             {
                 StatusComboBox.Items.Add(thing);
             }
+            foreach (Wishdate thing in Enum.GetValues(typeof(Wishdate))) { 
+                DeliveryTimeComboBox.Items.Add(thing);
+            }
         }
 
         private void OnCustomersOrderListDoubleClicked(object sender, DataGridViewCellEventArgs e)
         {
-            int currentCellIndex = CustomersOrderList.CurrentCell.RowIndex;
-            if (_orders.Count - 1 >= currentCellIndex)
+
+            if (_orders.Count - 1 >= CustomersOrderList.CurrentCell.RowIndex)
             {
+                int currentCellIndex = CustomersOrderList.CurrentCell.RowIndex;
+                _selectedOrder = _orders[currentCellIndex];
                 IdTextBox.Text = _orders[currentCellIndex].Id.ToString();
-                StatusComboBox.SelectedIndex = currentCellIndex;
+                StatusComboBox.SelectedIndex = 0 /*currentCellIndex*/;
                 CreatedTextBox.Text = _orders[currentCellIndex].DeliveryDate.ToString();
                 _addressControl.SetAddress = _orders[currentCellIndex].DeliveryAddress;
                 PriceLabel.Text = _orders[currentCellIndex].Cart.Amount.ToString();
@@ -93,14 +103,37 @@ namespace OOPproject.View.Tabs
                 {
                     ItemsListBox.Items.Add(_orders[currentCellIndex].Cart.Items[i].Name + " with price: " + _orders[currentCellIndex].Cart.Items[i].Cost.ToString());
                 }
+
+                if (_orders[currentCellIndex].GetType() == typeof(PriorityOrder))
+                {
+                    DeliveryTimeComboBox.Visible = true;
+                    _selectedPriorityOrder = _orders[currentCellIndex] as PriorityOrder;
+                    _selectedOrder = _selectedPriorityOrder;
+                    DeliveryTimeComboBox.SelectedIndex = (int)_selectedPriorityOrder.WishTime;
+                }
+                else
+                {
+                    _selectedPriorityOrder = null;
+                    DeliveryTimeComboBox.SelectedIndex = 0;
+                    DeliveryTimeComboBox.Visible = false;
+                }
             }
         }
 
         private void StatusComboBoxIndexChanged(object sender, EventArgs e)
         {
-            if (StatusComboBox.SelectedIndex != -1) {
+            if (StatusComboBox.SelectedIndex != -1)
+            {
                 int currentCellIndex = CustomersOrderList.CurrentCell.RowIndex;
                 _orders[currentCellIndex].Status = (OrderStatus)StatusComboBox.Items[StatusComboBox.SelectedIndex];
+            }
+        }
+
+        private void DeliveryTimeComboBoxIndexIsChanged(object sender, EventArgs e)
+        {
+            if (_selectedPriorityOrder != null) { 
+                _selectedPriorityOrder.WishTime = (Wishdate)DeliveryTimeComboBox.SelectedItem;
+                _orders[CustomersOrderList.CurrentCell.RowIndex] = _selectedPriorityOrder;
             }
         }
     }

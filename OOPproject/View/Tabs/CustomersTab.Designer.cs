@@ -263,6 +263,7 @@
             IsPriorityCheckBox.TabIndex = 6;
             IsPriorityCheckBox.Text = "Is Priority";
             IsPriorityCheckBox.UseVisualStyleBackColor = true;
+            IsPriorityCheckBox.CheckedChanged += IsPriorityCheckBoxChanged;
             // 
             // splitContainer4
             // 

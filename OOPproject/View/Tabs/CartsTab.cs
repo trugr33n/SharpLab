@@ -1,4 +1,5 @@
 ﻿using OOPproject.Model;
+using OOPproject.Model.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,7 +107,7 @@ namespace OOPproject.View.Tabs
 
         private void CreateOrderButtonPressed(object sender, EventArgs e)
         {
-            if (CurrentCustomer != null && CartListBox.Items.Count != 0)
+            if (CurrentCustomer != null && CartListBox.Items.Count != 0 && !CurrentCustomer.IsPriority)
             {
                 Cart cart = new Cart();
                 foreach (var item in CurrentCustomer.Cart.Items)
@@ -114,6 +115,20 @@ namespace OOPproject.View.Tabs
                     cart.Items.Add((Item)item);
                 }
                 Order newOrder = new Order(DateTime.Now, cart, CurrentCustomer.Address, CurrentCustomer.Fullname);
+                CurrentCustomer.Order.Add(newOrder);
+                CartListBox.Items.Clear();
+                CurrentCustomer.Cart.Items.Clear();
+                CustomerComboBox.SelectedIndex = -1;
+                PriceLabel.Text = CurrentCustomer.Cart.Amount.ToString();
+            }
+            else if (CurrentCustomer != null && CartListBox.Items.Count != 0 && CurrentCustomer.IsPriority)
+            {
+                Cart cart = new Cart();
+                foreach (var item in CurrentCustomer.Cart.Items)
+                {
+                    cart.Items.Add((Item)item);
+                }
+                PriorityOrder newOrder = new PriorityOrder(DateTime.Now, cart, CurrentCustomer.Address, CurrentCustomer.Fullname, DateTime.Now, Wishdate.FromNineToEleven);
                 CurrentCustomer.Order.Add(newOrder);
                 CartListBox.Items.Clear();
                 CurrentCustomer.Cart.Items.Clear();

@@ -28,7 +28,8 @@ namespace OOPproject.View.Tabs
             addressControl.Show();
         }
 
-        public List<Customer> Customers { 
+        public List<Customer> Customers
+        {
             get { return _customers; }
             set { _customers = value; }
         }
@@ -45,6 +46,7 @@ namespace OOPproject.View.Tabs
             Customer stackedCustomer = new Customer(FullnameTextBox.Text);
 
             stackedCustomer.Address = addressControl.GetAddress;
+            stackedCustomer.IsPriority = IsPriorityCheckBox.Checked;
 
             // Если данные валидны, добавляем элемент в список
             Customers.Add(stackedCustomer);
@@ -88,6 +90,7 @@ namespace OOPproject.View.Tabs
                 IdTextBox.Text = selectedCustomer.Id.ToString();
                 FullnameTextBox.Text = selectedCustomer.Fullname;
                 addressControl.SetAddress = selectedCustomer.Address;
+                IsPriorityCheckBox.Checked = selectedCustomer.IsPriority;
             }
         }
 
@@ -130,6 +133,15 @@ namespace OOPproject.View.Tabs
             {
                 var selectedCustomer = Customers[CustomersListBox.SelectedIndex];
                 selectedCustomer.Address = addressControl.GetAddress;
+            }
+        }
+
+        private void IsPriorityCheckBoxChanged(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedIndex >= 0)
+            {
+                int selectedIndex = CustomersListBox.SelectedIndex;
+                _customers[selectedIndex].IsPriority = IsPriorityCheckBox.Checked;
             }
         }
     }
