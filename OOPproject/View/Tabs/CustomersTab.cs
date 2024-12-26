@@ -1,4 +1,6 @@
 ﻿using OOPproject.Model;
+using OOPproject.Model.Discounts;
+using OOPproject.Model.Enums;
 using OOPproject.View.Controls;
 using System;
 using System.Collections.Generic;
@@ -91,6 +93,12 @@ namespace OOPproject.View.Tabs
                 FullnameTextBox.Text = selectedCustomer.Fullname;
                 addressControl.SetAddress = selectedCustomer.Address;
                 IsPriorityCheckBox.Checked = selectedCustomer.IsPriority;
+
+                DiscountsListBox.Items.Clear();
+                for (int i = 0; i < selectedCustomer.Discounts.Count; i++)
+                {
+                    DiscountsListBox.Items.Add(selectedCustomer.Discounts[i].Info);
+                }
             }
         }
 
@@ -124,6 +132,7 @@ namespace OOPproject.View.Tabs
             if (e.Button == MouseButtons.Right)
             {
                 CustomersListBox.ClearSelected();
+                DiscountsListBox.Items.Clear();
             }
         }
 
@@ -138,11 +147,50 @@ namespace OOPproject.View.Tabs
 
         private void IsPriorityCheckBoxChanged(object sender, EventArgs e)
         {
-            if (CustomersListBox.SelectedIndex >= 0)
+            if (CustomersListBox.SelectedIndex != -1)
             {
                 int selectedIndex = CustomersListBox.SelectedIndex;
                 _customers[selectedIndex].IsPriority = IsPriorityCheckBox.Checked;
             }
+        }
+
+        private void AddDiscountButtonPressed(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedIndex != -1) {
+                var popup = new AddDiscountPopup();
+                var result = popup.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    int index = CustomersListBox.SelectedIndex;
+                    Category category = popup.Category;
+                    Customers[index].Discounts.Add(new PercentDiscount(category));
+
+                    DiscountsListBox.Items.Clear();
+                    for (int i = 0; i < Customers[index].Discounts.Count; i++)
+                    {
+                        DiscountsListBox.Items.Add(Customers[index].Discounts[i].Info);
+                    }
+                }
+            }
+        }
+
+        private void RemoveDiscountButtonPressed(object sender, EventArgs e)
+        {
+            if (CustomersListBox.SelectedIndex != -1) {
+                if (DiscountsListBox.SelectedIndex != -1) {
+                    Customers[CustomersListBox.SelectedIndex].Discounts.RemoveAt(DiscountsListBox.SelectedIndex);
+                    DiscountsListBox.Items.Clear();
+                    for (int i = 0; i < Customers[CustomersListBox.SelectedIndex].Discounts.Count; i++) {
+                        DiscountsListBox.Items.Add(Customers[CustomersListBox.SelectedIndex].Discounts[i].Info);
+                    }
+                }
+            }
+        }
+
+        private void DiscountListBoxIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOPproject.Model
+namespace OOPproject.Model.Orders
 {
     public class Order
     {
@@ -16,10 +16,12 @@ namespace OOPproject.Model
         private Address _deliveryAddress;
         private decimal _totalPrice;
         private OrderStatus _status;
+        private decimal _discountAmount;
 
         private static int _nextId = 0;
 
-        public Order(DateTime deliveryDate, Cart cart, Address deliveryAddress, string fullName) {
+        public Order(DateTime deliveryDate, Cart cart, Address deliveryAddress, string fullName)
+        {
             this._id = _nextId;
             this._deliveryDate = deliveryDate;
             Cart = cart;
@@ -45,8 +47,12 @@ namespace OOPproject.Model
         public Address DeliveryAddress { get { return this._deliveryAddress; } set { this._deliveryAddress = value; } }
         public decimal TotalPrice { get { return this._totalPrice; } }
         public OrderStatus Status { get { return this._status; } set { this._status = value; } }
-        public String FullName { get { return this._fullname; } }
-        
+        public string FullName { get { return this._fullname; } }
+        public decimal DiscountAmount { get { return this._discountAmount; } set { this._discountAmount = value; } }
+
+        public decimal Total() { 
+            return Cart.Amount - DiscountAmount;
+        }
 
     }
 }

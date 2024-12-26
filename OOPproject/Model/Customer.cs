@@ -1,4 +1,6 @@
-﻿using OOPproject.Services;
+﻿using OOPproject.Model.Discounts;
+using OOPproject.Model.Orders;
+using OOPproject.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace OOPproject.Model
         private Address _address;
         private Cart _cart;
         private List<Order> _order;
+        private List<IDiscount> _discounts;
 
         private static int _nextId = 0;
 
@@ -22,6 +25,8 @@ namespace OOPproject.Model
             Fullname = fullname;
             Cart = new(); 
             Order = new();
+            Discounts = new();
+            Discounts.Add(new PointsDiscount());
             IsPriority = false;
 
             _nextId++;
@@ -44,6 +49,7 @@ namespace OOPproject.Model
             get { return this._order; }
             set { this._order = value; }
         }
+        public List<IDiscount> Discounts { get { return this._discounts; } set { this._discounts = value; } }
         public bool IsPriority { get; set; }
     }
 }

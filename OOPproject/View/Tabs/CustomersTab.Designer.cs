@@ -45,6 +45,12 @@
             IsPriorityCheckBox = new CheckBox();
             splitContainer4 = new SplitContainer();
             AddressFaceContainer = new Panel();
+            groupBox3 = new GroupBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            AddDiscountButton = new Button();
+            RemoveDiscountButton = new Button();
+            DiscountsListBox = new ListBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -63,7 +69,11 @@
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
             splitContainer4.Panel1.SuspendLayout();
+            splitContainer4.Panel2.SuspendLayout();
             splitContainer4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -275,6 +285,10 @@
             // splitContainer4.Panel1
             // 
             splitContainer4.Panel1.Controls.Add(AddressFaceContainer);
+            // 
+            // splitContainer4.Panel2
+            // 
+            splitContainer4.Panel2.Controls.Add(groupBox3);
             splitContainer4.Size = new Size(487, 353);
             splitContainer4.SplitterDistance = 171;
             splitContainer4.TabIndex = 0;
@@ -287,6 +301,87 @@
             AddressFaceContainer.Size = new Size(487, 171);
             AddressFaceContainer.TabIndex = 0;
             AddressFaceContainer.Leave += AddressControlLeaved;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(tableLayoutPanel3);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox3.Location = new Point(0, 0);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(487, 178);
+            groupBox3.TabIndex = 0;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Discounts";
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 1, 0);
+            tableLayoutPanel3.Controls.Add(DiscountsListBox, 0, 0);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(3, 21);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(481, 154);
+            tableLayoutPanel3.TabIndex = 0;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 1;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel4.Controls.Add(AddDiscountButton, 0, 0);
+            tableLayoutPanel4.Controls.Add(RemoveDiscountButton, 0, 1);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(363, 3);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 4;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.Size = new Size(115, 148);
+            tableLayoutPanel4.TabIndex = 0;
+            // 
+            // AddDiscountButton
+            // 
+            AddDiscountButton.Dock = DockStyle.Fill;
+            AddDiscountButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            AddDiscountButton.Location = new Point(3, 3);
+            AddDiscountButton.Name = "AddDiscountButton";
+            AddDiscountButton.Size = new Size(109, 31);
+            AddDiscountButton.TabIndex = 0;
+            AddDiscountButton.Text = "Add";
+            AddDiscountButton.UseVisualStyleBackColor = true;
+            AddDiscountButton.Click += AddDiscountButtonPressed;
+            // 
+            // RemoveDiscountButton
+            // 
+            RemoveDiscountButton.Dock = DockStyle.Fill;
+            RemoveDiscountButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            RemoveDiscountButton.Location = new Point(3, 40);
+            RemoveDiscountButton.Name = "RemoveDiscountButton";
+            RemoveDiscountButton.Size = new Size(109, 31);
+            RemoveDiscountButton.TabIndex = 1;
+            RemoveDiscountButton.Text = "Remove";
+            RemoveDiscountButton.UseVisualStyleBackColor = true;
+            RemoveDiscountButton.Click += RemoveDiscountButtonPressed;
+            // 
+            // DiscountsListBox
+            // 
+            DiscountsListBox.Dock = DockStyle.Fill;
+            DiscountsListBox.FormattingEnabled = true;
+            DiscountsListBox.ItemHeight = 17;
+            DiscountsListBox.Location = new Point(3, 3);
+            DiscountsListBox.Name = "DiscountsListBox";
+            DiscountsListBox.Size = new Size(354, 148);
+            DiscountsListBox.TabIndex = 1;
+            DiscountsListBox.SelectedIndexChanged += DiscountListBoxIndexChanged;
             // 
             // CustomersTab
             // 
@@ -314,8 +409,12 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             splitContainer4.Panel1.ResumeLayout(false);
+            splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
             splitContainer4.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -338,5 +437,11 @@
         private SplitContainer splitContainer4;
         private Panel AddressFaceContainer;
         private CheckBox IsPriorityCheckBox;
+        private GroupBox groupBox3;
+        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel tableLayoutPanel4;
+        private ListBox DiscountsListBox;
+        private Button AddDiscountButton;
+        private Button RemoveDiscountButton;
     }
 }
