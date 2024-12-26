@@ -18,6 +18,7 @@ namespace OOPproject.View.Tabs
         private List<Customer> _customers;
         private List<Item> _items;
         private Customer _currentCustomer;
+        private decimal _totalDiscount;
         private Store _store = new Store();
 
         public CartsTab()
@@ -54,6 +55,7 @@ namespace OOPproject.View.Tabs
         }
         private void ItemsUpdate()
         {
+            DiscountUpdate();
             if (CurrentCustomer != null)
             {
                 CartListBox.Items.Clear();
@@ -76,6 +78,21 @@ namespace OOPproject.View.Tabs
             }
         }
 
+        private void DiscountUpdate()
+        {
+            _totalDiscount = 0;
+            for (int i = 0; i < DiscountsCheckedListBox.Items.Count; i++)
+            {
+                if (DiscountsCheckedListBox.GetItemChecked(i))
+                {
+                    _totalDiscount += CurrentCustomer.Discounts[i].Calculate(CurrentCustomer.Cart.Items);
+                }
+            }
+
+            DiscountPriceLabel.Text = _totalDiscount.ToString();
+            TotalPriceLabel.Text = (CurrentCustomer.Cart.Amount - _totalDiscount).ToString();
+        }
+
         public void RefreshData()
         {
             ItemsListBox.SelectedIndex = -1;
@@ -90,6 +107,13 @@ namespace OOPproject.View.Tabs
             {
                 CurrentCustomer = Customers[CustomerComboBox.SelectedIndex];
                 ItemsUpdate();
+                DiscountsCheckedListBox.Items.Clear();
+
+                for (int i = 0; i < CurrentCustomer.Discounts.Count; i++)
+                {
+                    DiscountsCheckedListBox.Items.Add(CurrentCustomer.Discounts[i].Info);
+                    DiscountsCheckedListBox.SetItemChecked(i, true);
+                }
             }
         }
 
@@ -116,11 +140,14 @@ namespace OOPproject.View.Tabs
                     cart.Items.Add((Item)item);
                 }
                 Order newOrder = new Order(DateTime.Now, cart, CurrentCustomer.Address, CurrentCustomer.Fullname);
+                newOrder.DiscountAmount = _totalDiscount;
                 CurrentCustomer.Order.Add(newOrder);
                 CartListBox.Items.Clear();
                 CurrentCustomer.Cart.Items.Clear();
                 CustomerComboBox.SelectedIndex = -1;
                 PriceLabel.Text = CurrentCustomer.Cart.Amount.ToString();
+                DiscountsCheckedListBox.Items.Clear();
+                DiscountUpdate();
             }
             else if (CurrentCustomer != null && CartListBox.Items.Count != 0 && CurrentCustomer.IsPriority)
             {
@@ -130,11 +157,14 @@ namespace OOPproject.View.Tabs
                     cart.Items.Add((Item)item);
                 }
                 PriorityOrder newOrder = new PriorityOrder(DateTime.Now, cart, CurrentCustomer.Address, CurrentCustomer.Fullname, DateTime.Now, Wishdate.FromNineToEleven);
+                newOrder.DiscountAmount = _totalDiscount;
                 CurrentCustomer.Order.Add(newOrder);
                 CartListBox.Items.Clear();
                 CurrentCustomer.Cart.Items.Clear();
                 CustomerComboBox.SelectedIndex = -1;
                 PriceLabel.Text = CurrentCustomer.Cart.Amount.ToString();
+                DiscountsCheckedListBox.Items.Clear();
+                DiscountUpdate();
             }
             else { return; }
         }
@@ -160,6 +190,11 @@ namespace OOPproject.View.Tabs
                 PriceLabel.Text = CurrentCustomer.Cart.Amount.ToString();
             }
             else { return; }
+        }
+
+        private void DiscountsCheckedListBoxValueChanged(object sender, EventArgs e)
+        {
+            DiscountUpdate();
         }
     }
 }

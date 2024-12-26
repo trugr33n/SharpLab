@@ -46,6 +46,15 @@
             CreateOrderButton = new Button();
             RemoveItemButton = new Button();
             ClearCartButton = new Button();
+            groupBox3 = new GroupBox();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            DiscountsCheckedListBox = new CheckedListBox();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            label3 = new Label();
+            DiscountPriceLabel = new Label();
+            tableLayoutPanel7 = new TableLayoutPanel();
+            label4 = new Label();
+            TotalPriceLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -60,6 +69,10 @@
             tableLayoutPanel3.SuspendLayout();
             groupBox2.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
+            groupBox3.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
+            tableLayoutPanel7.SuspendLayout();
             SuspendLayout();
             // 
             // splitContainer1
@@ -153,16 +166,19 @@
             tableLayoutPanel2.Controls.Add(label2, 0, 2);
             tableLayoutPanel2.Controls.Add(PriceLabel, 0, 3);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 0, 4);
+            tableLayoutPanel2.Controls.Add(groupBox3, 0, 5);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel7, 0, 6);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(0, 0);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 6;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 9.841328F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 42.8870354F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 5.36087942F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10.7217588F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 9.777778F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 21.7777786F));
+            tableLayoutPanel2.RowCount = 7;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 9.80442F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 22.8041611F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 5.34077549F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 7.67964125F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 9.74111F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 31.6299229F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.9999685F));
             tableLayoutPanel2.Size = new Size(526, 450);
             tableLayoutPanel2.TabIndex = 0;
             // 
@@ -209,7 +225,7 @@
             groupBox2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             groupBox2.Location = new Point(3, 47);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(520, 186);
+            groupBox2.Size = new Size(520, 96);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Cart";
@@ -221,7 +237,7 @@
             CartListBox.ItemHeight = 15;
             CartListBox.Location = new Point(3, 19);
             CartListBox.Name = "CartListBox";
-            CartListBox.Size = new Size(514, 164);
+            CartListBox.Size = new Size(514, 74);
             CartListBox.TabIndex = 0;
             // 
             // label2
@@ -229,7 +245,7 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Right;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            label2.Location = new Point(461, 236);
+            label2.Location = new Point(461, 146);
             label2.Name = "label2";
             label2.Size = new Size(62, 24);
             label2.TabIndex = 2;
@@ -239,10 +255,10 @@
             // 
             PriceLabel.AutoSize = true;
             PriceLabel.Dock = DockStyle.Right;
-            PriceLabel.Font = new Font("Segoe UI", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            PriceLabel.Location = new Point(333, 260);
+            PriceLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            PriceLabel.Location = new Point(373, 170);
             PriceLabel.Name = "PriceLabel";
-            PriceLabel.Size = new Size(190, 48);
+            PriceLabel.Size = new Size(150, 34);
             PriceLabel.TabIndex = 3;
             PriceLabel.Text = "PriceLabel";
             // 
@@ -257,7 +273,7 @@
             tableLayoutPanel4.Controls.Add(RemoveItemButton, 2, 0);
             tableLayoutPanel4.Controls.Add(ClearCartButton, 3, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 311);
+            tableLayoutPanel4.Location = new Point(3, 207);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -297,6 +313,122 @@
             ClearCartButton.UseVisualStyleBackColor = true;
             ClearCartButton.Click += ClearCartButtonPressed;
             // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(tableLayoutPanel5);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            groupBox3.Location = new Point(3, 250);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(520, 136);
+            groupBox3.TabIndex = 5;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Discounts";
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel5.Controls.Add(DiscountsCheckedListBox, 0, 0);
+            tableLayoutPanel5.Controls.Add(tableLayoutPanel6, 1, 0);
+            tableLayoutPanel5.Dock = DockStyle.Fill;
+            tableLayoutPanel5.Location = new Point(3, 21);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 1;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel5.Size = new Size(514, 112);
+            tableLayoutPanel5.TabIndex = 0;
+            // 
+            // DiscountsCheckedListBox
+            // 
+            DiscountsCheckedListBox.BackColor = SystemColors.Menu;
+            DiscountsCheckedListBox.BorderStyle = BorderStyle.None;
+            DiscountsCheckedListBox.Dock = DockStyle.Fill;
+            DiscountsCheckedListBox.FormattingEnabled = true;
+            DiscountsCheckedListBox.Location = new Point(3, 3);
+            DiscountsCheckedListBox.Name = "DiscountsCheckedListBox";
+            DiscountsCheckedListBox.Size = new Size(379, 106);
+            DiscountsCheckedListBox.TabIndex = 0;
+            DiscountsCheckedListBox.SelectedValueChanged += DiscountsCheckedListBoxValueChanged;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 1;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel6.Controls.Add(label3, 0, 0);
+            tableLayoutPanel6.Controls.Add(DiscountPriceLabel, 0, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(388, 3);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 2;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 85F));
+            tableLayoutPanel6.Size = new Size(123, 106);
+            tableLayoutPanel6.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label3.Location = new Point(3, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(117, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Discount Amount:";
+            // 
+            // DiscountPriceLabel
+            // 
+            DiscountPriceLabel.AutoSize = true;
+            DiscountPriceLabel.Dock = DockStyle.Right;
+            DiscountPriceLabel.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            DiscountPriceLabel.Location = new Point(54, 15);
+            DiscountPriceLabel.Name = "DiscountPriceLabel";
+            DiscountPriceLabel.Size = new Size(66, 91);
+            DiscountPriceLabel.TabIndex = 1;
+            DiscountPriceLabel.Text = "D.P.L.";
+            // 
+            // tableLayoutPanel7
+            // 
+            tableLayoutPanel7.ColumnCount = 1;
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel7.Controls.Add(label4, 0, 0);
+            tableLayoutPanel7.Controls.Add(TotalPriceLabel, 0, 1);
+            tableLayoutPanel7.Dock = DockStyle.Fill;
+            tableLayoutPanel7.Location = new Point(3, 392);
+            tableLayoutPanel7.Name = "tableLayoutPanel7";
+            tableLayoutPanel7.RowCount = 2;
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanel7.Size = new Size(520, 55);
+            tableLayoutPanel7.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Right;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label4.Location = new Point(457, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(60, 22);
+            label4.TabIndex = 0;
+            label4.Text = "TOTAL:";
+            // 
+            // TotalPriceLabel
+            // 
+            TotalPriceLabel.AutoSize = true;
+            TotalPriceLabel.Dock = DockStyle.Right;
+            TotalPriceLabel.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            TotalPriceLabel.Location = new Point(330, 22);
+            TotalPriceLabel.Name = "TotalPriceLabel";
+            TotalPriceLabel.Size = new Size(187, 33);
+            TotalPriceLabel.TabIndex = 1;
+            TotalPriceLabel.Text = "TotalPriceLabel";
+            // 
             // CartsTab
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -321,6 +453,12 @@
             tableLayoutPanel3.PerformLayout();
             groupBox2.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
+            tableLayoutPanel6.PerformLayout();
+            tableLayoutPanel7.ResumeLayout(false);
+            tableLayoutPanel7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -344,5 +482,14 @@
         private Button CreateOrderButton;
         private Button RemoveItemButton;
         private Button ClearCartButton;
+        private GroupBox groupBox3;
+        private TableLayoutPanel tableLayoutPanel5;
+        private CheckedListBox DiscountsCheckedListBox;
+        private TableLayoutPanel tableLayoutPanel6;
+        private Label label3;
+        private Label DiscountPriceLabel;
+        private TableLayoutPanel tableLayoutPanel7;
+        private Label label4;
+        private Label TotalPriceLabel;
     }
 }
