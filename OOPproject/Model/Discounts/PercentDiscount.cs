@@ -32,10 +32,8 @@ namespace OOPproject.Model.Discounts
         public decimal Calculate(List<Item> items)
         {
             decimal totalDiscount = 0;
-            foreach (var thing in items)
-            {
-                if (thing.ItemCategory == Category)
-                {
+            foreach (var thing in items) {
+                if (thing.ItemCategory == Category) {
                     totalDiscount += thing.Cost * Discount;
                 }
             }

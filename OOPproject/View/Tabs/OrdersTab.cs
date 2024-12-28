@@ -59,7 +59,7 @@ namespace OOPproject.View.Tabs
                     interimRow.Cells[2].Value = _orders[i].Status;
                     interimRow.Cells[3].Value = _orders[i].FullName;
                     interimRow.Cells[4].Value = _orders[i].DeliveryAddress.City + ", " + _orders[i].DeliveryAddress.Street + ", " + _orders[i].DeliveryAddress.Building;
-                    interimRow.Cells[5].Value = _orders[i].Cart.Amount;
+                    interimRow.Cells[5].Value = _orders[i].Total();
 
                     CustomersOrderList.Rows.Add(interimRow);
                 }
@@ -97,7 +97,7 @@ namespace OOPproject.View.Tabs
                 StatusComboBox.SelectedIndex = 0 /*currentCellIndex*/;
                 CreatedTextBox.Text = _orders[currentCellIndex].DeliveryDate.ToString();
                 _addressControl.SetAddress = _orders[currentCellIndex].DeliveryAddress;
-                PriceLabel.Text = _orders[currentCellIndex].Cart.Amount.ToString();
+                PriceLabel.Text = _orders[currentCellIndex].Total().ToString();
 
                 ItemsListBox.Items.Clear();
                 for (int i = 0; i < _orders[currentCellIndex].Cart.Items.Count; i++)
